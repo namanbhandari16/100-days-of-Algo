@@ -1,4 +1,4 @@
-//without kahn's algorithm
+//without kahn's algorithm DFS based
 #include<bits/stdc++.h>
 using namespace std;
 class Graph{
