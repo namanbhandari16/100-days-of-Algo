@@ -1,4 +1,4 @@
-//using dsf aproach learned from gfg
+//using dsf aproach learned from gfg for undirected graph
 #include<bits/stdc++.h>
 using namespace std;
 class Graph{
