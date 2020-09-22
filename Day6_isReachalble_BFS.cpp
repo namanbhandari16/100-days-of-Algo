@@ -1,4 +1,5 @@
 //using bfs check is one vertex is reachable to another or not
+//thanks to gfg 
 #include<bits/stdc++.h>
 using namespace std;
 class Graph{
