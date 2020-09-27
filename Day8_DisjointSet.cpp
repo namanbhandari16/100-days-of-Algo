@@ -1,81 +1,93 @@
-//union find algorithm set-2 gfg 
-//by rank and path compression
-//this code is just for ref. it has segmentation fault please fix if you can
-#include<bits/stdc++.h>
-using namespace std;
+// A C++ Program to detect cycle in an undirected graph 
+#include<bits\stdc++.h>
+using namespace std; 
 
-struct subset{
-    int parent;
-    int rank;
-};
+// Class for an undirected graph 
+class Graph 
+{ 
+	int V; // No. of vertices 
+	list<int> *adj; // Pointer to an array containing adjacency lists 
+	bool isCyclicUtil(int v, bool visited[], int parent); 
+public: 
+	Graph(int V); // Constructor 
+	void addEdge(int v, int w); // to add an edge to graph 
+	bool isCyclic(); // returns true if there is a cycle 
+}; 
 
-class Graph{
-    public:
-     int V;
-     vector<struct subset >subsets;
-     vector<vector<int>> adj;
-     Graph(int V);
-     void addEdge(int u,int v);
-     int find(int i);
-     void Union(int i,int j);
-     int isCyclic();
-};
+Graph::Graph(int V) 
+{ 
+	this->V = V; 
+	adj = new list<int>[V]; 
+} 
 
-int Graph::isCyclic(){
-   for (int v = 0; v < V; ++v) 
-    { 
-        subsets[v].parent = v; 
-        subsets[v].rank = 0; 
-    }
-    for(int e = 0;e< adj.size();e++){
-         int x = find(adj[e][0]);
-         for(auto i: adj[e]){
-             int y = find(i);
-             if(x==y)
-              return 1;
-              Union(x,y);
-         }
-    }
-    return 0; 
-}
+void Graph::addEdge(int v, int w) 
+{ 
+	adj[v].push_back(w); // Add w to v’s list. 
+	adj[w].push_back(v); // Add v to w’s list. 
+} 
 
-int Graph::find(int i){
-   if(subsets[i].parent!=i)
-      subsets[i].parent = find(subsets[i].parent);
-    return subsets[i].parent;
-}
+// A recursive function that uses visited[] and parent to detect 
+// cycle in subgraph reachable from vertex v. 
+bool Graph::isCyclicUtil(int v, bool visited[], int parent) 
+{ 
+	// Mark the current node as visited 
+	visited[v] = true; 
 
-void Graph::Union(int x,int y){
-    int xroot = find(x);
-    int yroot = find(y);
-    if(subsets[xroot].rank < subsets[yroot].rank)
-       subsets[xroot].parent = yroot;
-    else if (subsets[xroot].rank > subsets[yroot].rank) 
-        subsets[yroot].parent = xroot;
-    else
-    { 
-        subsets[yroot].parent = xroot; 
-        subsets[xroot].rank++; 
-    } 
-}
+	// Recur for all the vertices adjacent to this vertex 
+	list<int>::iterator i; 
+	for (i = adj[v].begin(); i != adj[v].end(); ++i) 
+	{ 
+		// If an adjacent is not visited, then recur for that adjacent 
+		if (!visited[*i]) 
+		{ 
+		if (isCyclicUtil(*i, visited, v)) 
+			return true; 
+		} 
 
-void Graph::addEdge(int u, int v){
-    adj[u].push_back(v);
-}
-Graph::Graph(int v){
-    this->V = v;
-}
+		// If an adjacent is visited and not parent of current vertex, 
+		// then there is a cycle. 
+		else if (*i != parent) 
+		return true; 
+	} 
+	return false; 
+} 
 
+// Returns true if the graph contains a cycle, else false. 
+bool Graph::isCyclic() 
+{ 
+	// Mark all the vertices as not visited and not part of recursion 
+	// stack 
+	bool *visited = new bool[V]; 
+	for (int i = 0; i < V; i++) 
+		visited[i] = false; 
 
-int main(){
-    Graph g(4);
-    g.addEdge(1,2);
-    g.addEdge(2,3);
-    g.addEdge(3,1);
-    if(g.isCyclic()) 
-     cout<<"Cycle detected\n";
-    else cout<<"No cycle\n";
+	// Call the recursive helper function to detect cycle in different 
+	// DFS trees 
+	for (int u = 0; u < V; u++) 
+		if (!visited[u]) // Don't recur for u if it is already visited 
+		if (isCyclicUtil(u, visited, -1)) 
+			return true; 
 
-    return 0;
-  
-}
+	return false; 
+} 
+
+// Driver program to test above functions 
+int main() 
+{ 
+	Graph g1(5); 
+	g1.addEdge(1, 0); 
+	g1.addEdge(0, 2); 
+	g1.addEdge(2, 1); 
+	g1.addEdge(0, 3); 
+	g1.addEdge(3, 4); 
+	g1.isCyclic()? cout << "Graph contains cycle\n": 
+				cout << "Graph doesn't contain cycle\n"; 
+
+	Graph g2(3); 
+	g2.addEdge(0, 1); 
+	g2.addEdge(1, 2); 
+	g2.isCyclic()? cout << "Graph contains cycle\n": 
+				cout << "Graph doesn't contain cycle\n"; 
+
+	return 0; 
+} 
