@@ -1,5 +1,6 @@
 # 100-days-of-Algo
 My 100 days of algo journey. Join me in.
+### This Repo is open for Hacktoberfest 
 ### step 1.
  Fork this Repo
 ### step 2.
