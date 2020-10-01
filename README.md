@@ -1,6 +1,7 @@
 # 100-days-of-Algo
 My 100 days of algo journey. Join me in.
 Create a seprate folder with the name of topic or if it is already created then just add your code on that folder :)
+Just do not edit my personal journey folder :)
 ### This Repo is open for Hacktoberfest 
 ### step 1.
 Fork this Repo
