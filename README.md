@@ -7,9 +7,11 @@ My 100 days of algo journey. Join me in.
 ### step 3. 
  make your contribution
 ### step 4.
+```bash
   git add .
   git commit -m "your message"
   git push origin master
+```
 ### step 5 
   Raise pull request
 # Happy contribution :)
