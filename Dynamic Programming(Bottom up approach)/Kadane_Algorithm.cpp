@@ -1,9 +1,3 @@
-/*
- * 
- * Author: Pranav Bansal
- * 
-*/
-
 #include<bits/stdc++.h>
 
 #define rep(i,a,n) for(int i=a;i<n;i++)
