@@ -11,7 +11,9 @@ Create a new branch and set branch name to whatever algorithm you're creating
 ``$ git checkout -b <your-branch-name>``
 ### step 4.
 ``$ git add .``
+
 ``$ git commit -m "Added <your-algorithm-name>"``
+
 ``$ git push -u origin <your-branch-name>``
 ### step 5
   Raise pull request
