@@ -1,3 +1,7 @@
+// LINK:https://practice.geeksforgeeks.org/problems/find-optimum-operation4504/1/?category[]=Dynamic%20Programming&problemStatus=solved&page=1&query=category[]Dynamic%20ProgrammingproblemStatussolvedpage1
+// Expected Time Complexity: O(LogN)
+// Expected Auxiliary Space: O(1)
+#include <bits/stdc++.h>
 #define lli long long int
 #define ull unsigned long long
 #define pb push_back

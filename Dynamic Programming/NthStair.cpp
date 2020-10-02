@@ -1,3 +1,6 @@
+// LINK:https://practice.geeksforgeeks.org/problems/count-ways-to-reach-the-nth-stair/0/?category[]=Dynamic%20Programming&problemStatus=solved&page=1&query=category[]Dynamic%20ProgrammingproblemStatussolvedpage1
+// TIME COMPLEXITY:O(N) FOR PRECALCULATING ALL ANSWERS
+#include<bits/stdc++.h>
 #define lli long long int
 #define ull unsigned long long
 #define pb push_back

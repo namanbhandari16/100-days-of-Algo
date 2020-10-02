@@ -1,3 +1,7 @@
+// LINK:https://practice.geeksforgeeks.org/problems/ncr1019/1/?category[]=Dynamic%20Programming&problemStatus=solved&page=1&query=category[]Dynamic%20ProgrammingproblemStatussolvedpage1
+// Expected Time Complexity: O(n*r)
+// Expected Auxiliary Space: O(r)
+#include <bits/stdc++.h>
 #define lli long long int
 #define ull unsigned long long
 #define pb push_back

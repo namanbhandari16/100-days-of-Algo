@@ -1,3 +1,6 @@
+// LINK:https://practice.geeksforgeeks.org/problems/nth-catalan-number/0/?category[]=Dynamic%20Programming&problemStatus=solved&page=1&query=category[]Dynamic%20ProgrammingproblemStatussolvedpage1
+// Expected Time Complexity: O(N).
+// Expected Auxiliary Space: O(N).
 #include <boost/multiprecision/cpp_int.hpp> 
 #define lli long long int
 #define ull unsigned long long

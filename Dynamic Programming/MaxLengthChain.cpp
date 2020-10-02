@@ -1,3 +1,7 @@
+// LINK:https://practice.geeksforgeeks.org/problems/max-length-chain/1/?category[]=Dynamic%20Programming&problemStatus=solved&page=1&query=category[]Dynamic%20ProgrammingproblemStatussolvedpage1
+// Expected Time Complexity: O(N*N)
+// Expected Auxiliary Space: O(N)
+
 #include <bits/stdc++.h>
 using namespace std;
 

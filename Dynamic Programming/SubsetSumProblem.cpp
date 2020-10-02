@@ -1,3 +1,8 @@
+// LINK:https://practice.geeksforgeeks.org/problems/subset-sum-problem2014/1/?category[]=Dynamic%20Programming&problemStatus=solved&page=1&query=category[]Dynamic%20ProgrammingproblemStatussolvedpage1
+// Expected Time Complexity: O(N*sum of elements)
+// Expected Auxiliary Space: O(N*sum of elements)
+
+#include <bits/stdc++.h>
 #define lli long long int
 #define ull unsigned long long
 #define pb push_back
