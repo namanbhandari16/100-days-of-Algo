@@ -1,0 +1,41 @@
+Q. Given an array of n numbers, sorted in non-decreasing order, print the minimum index of an 
+array element not less than the given one.
+
+import java.io.*;
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();    //Getting n as input
+		int x = sc.nextInt();    //Getting x which needs to be searched as input
+		int[] a = new int[n];
+		for(int i = 0 ; i < n ; i++) {
+			a[i] = sc.nextInt();
+		}
+		int l = 0;    //Lower limit of index`
+        int r = n - 1;  //Upper limit of index
+        int c = 0;    //Result
+        int ans = 0;   //It will contain our index containing our answer
+        while(l <= r) {
+            int m = (r - l) / 2 + l;   //Calculating the mid index
+            if(a[m] >= x) {   //If mid contains greater than x, then we update r=mid-1
+                ans = m;
+                c = 1;
+                r = m - 1;
+                
+            }
+            else{
+                l = m + 1;     //Else l=mid+1;
+            }
+        }
+        if(c == 1){
+            System.out.println(ans+1);  //Print ans according to 1-based indexing
+        }
+        else{
+            System.out.println(n+1);  //If not found then print just greater element than n
+        }
+    }
+    
+}
