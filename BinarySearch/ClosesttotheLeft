@@ -1,4 +1,4 @@
-Q. Given an array of n numbers, sorted in non-decreasing order, print the maximum index of an
+Q. Given an array of n numbers, sorted in non-decreasing order, print the maximum index of an 
 array element not greater than the given one.
 
 import java.io.*;
