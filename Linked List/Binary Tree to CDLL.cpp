@@ -1,11 +1,16 @@
+// C++ Program to convert a Binary Tree 
+// to a Circular Doubly Linked List 
 #include <bits/stdc++.h>
 using namespace std;
+
+// To represents a node of a Binary Tree 
 struct Node
 {
     int data;
     Node *left;
     Node *right;
 };
+// Create a new Node and return its address 
 Node *newNode(int val)
 {
     Node *temp = new Node;
@@ -17,6 +22,8 @@ Node *newNode(int val)
 }
 
 Node *bTreeToCList(Node *root);
+
+// Display Circular Link List
 void displayCList(Node *head)
 {
     Node *itr = head;
@@ -73,6 +80,7 @@ Node *buildTree(string str)
     return root;
 }
 
+// Driver Program to test above function
 int main()
 {
     int t;
@@ -102,6 +110,8 @@ struct Node
         left = right = NULL;
     }
 };
+
+// Function converts a tree to a circular Linked List 
 void convert(Node *root, Node **head)
 {
     if (root == NULL)
