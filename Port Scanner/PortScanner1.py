@@ -6,8 +6,8 @@ import socket
 
 sock=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-host="192.168.1.4" \\enter the IP of target
-port=443 \\enter the port which u want to scan
+host="192.168.1.4" //enter the IP of target
+port=443 //enter the port which u want to scan
 
 def portscanner(port):
   if sock.connect_ex((host,port))
